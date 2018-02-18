@@ -28,6 +28,7 @@ class Atm():
 				elif request<5:
 					request-=3
 					print "give 2"
+		print "--------------------------------------"
 		return self.balance-request
 
 balance1=500
