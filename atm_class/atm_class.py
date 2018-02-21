@@ -32,17 +32,15 @@ class Atm():
 
 balance1=500
 balance2=1000
-#take the request from the user 
-user_request=int(raw_input("Please Enter your request? "))
 #instnaces of class atm
 atm1=Atm(balance1,"Smart Bank")
 print ("Welecom to "+ atm1.nameBank)
 print ("current blanace "+str(atm1.balance))
-atm1.withdraw(user_request)
+atm1.withdraw(200)
 
 atm2=Atm(balance2," TD Bank")
 print ("Welecom to "+ atm2.nameBank)
 print ("current blanace "+str(atm2.balance))
-atm2.withdraw(user_request)
-atm2.withdraw(user_request)
+atm2.withdraw(300)
+atm2.withdraw(400)
 
