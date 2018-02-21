@@ -30,6 +30,7 @@ class Atm():
 					print "give 5"
 				else:
 					print "give"+str(request)
+					request=0
 					
 		print "--------------------------------------"
 		return self.balance
