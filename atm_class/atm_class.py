@@ -14,31 +14,30 @@ class Atm():
 		elif request<=0:
 			print "More than Zero" 
 		else:
+			self.balance-=request 
 			while request>0:
 				if request>=100:
 					request-=100
 					print "give 100"
-					self.balance-=request
 				elif request>=50:
 					request-=50
 					print "give 50"
-					self.balance-=request
-				elif request>=10:
+				elif request>=10:	
 					request-=10
 					print "give 10"
-					self.balance-=request
 				elif request>=5:
 					request-=5
 					print "give 5"
-					self.balance-=request
 				else:
 					print "give"+str(request)
-					self.balance-=request
+					
 		print "--------------------------------------"
 		return self.balance
+		
 balance1=500
 balance2=1000
 #instnaces of class atm
+print "\n" 
 atm1=Atm(balance1,"Smart Bank")
 print ("Welecom to "+ atm1.nameBank)
 print ("current blanace "+str(atm1.balance))
@@ -47,6 +46,6 @@ atm1.withdraw(200)
 atm2=Atm(balance2," TD Bank")
 print ("Welecom to "+ atm2.nameBank)
 print ("current blanace "+str(atm2.balance))
-atm2.withdraw(300)
-atm2.withdraw(400)
-
+atm2.withdraw(500)
+atm2.withdraw(500)
+atm2.withdraw(90)
