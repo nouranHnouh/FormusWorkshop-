@@ -1,11 +1,16 @@
 class Atm():
+	"""class Atm has information about Atm such as balance and the name of the bank"""
+	#define constructor that set balance to givin account balance
+	#and set the name of the bank 
 	def __init__(self,balance,name_of_bank):
 		self.balance=balance
 		self.nameBank=name_of_bank
-	
+	#withdraw method takes the request of money, print how much mony the atm will give you
+	#return the current balance after withdraw 
 	def withdraw(self,request):
+		#check if request of mony is less than balnace print an error message 
 		if request>self.balance:
-			print "can`t give you all this money"
+			print "can`t give you all this money"	
 		else:
 			while request>0:
 				if request>=100:
