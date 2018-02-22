@@ -10,8 +10,11 @@ class Atm():
 	def withdraw(self,request):
 		#check if request of mony is less than balnace print an error message 
 		if request>self.balance:
-			print "can`t give you all this money"	
+			print "can`t give you all this money"
+		elif request<=0:
+			print "More than Zero" 
 		else:
+			self.balance-=request 
 			while request>0:
 				if request>=100:
 					request-=100
@@ -19,7 +22,7 @@ class Atm():
 				elif request>=50:
 					request-=50
 					print "give 50"
-				elif request>=10:
+				elif request>=10:	
 					request-=10
 					print "give 10"
 				elif request>=5:
@@ -27,12 +30,15 @@ class Atm():
 					print "give 5"
 				else:
 					print "give"+str(request)
+					request=0
+					
 		print "--------------------------------------"
-		return self.balance-request
-
+		return self.balance
+		
 balance1=500
 balance2=1000
 #instnaces of class atm
+print "\n" 
 atm1=Atm(balance1,"Smart Bank")
 print ("Welecom to "+ atm1.nameBank)
 print ("current blanace "+str(atm1.balance))
@@ -41,6 +47,6 @@ atm1.withdraw(200)
 atm2=Atm(balance2," TD Bank")
 print ("Welecom to "+ atm2.nameBank)
 print ("current blanace "+str(atm2.balance))
-atm2.withdraw(300)
-atm2.withdraw(400)
-
+atm2.withdraw(500)
+atm2.withdraw(500)
+atm2.withdraw(90)
