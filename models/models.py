@@ -5,6 +5,7 @@ class Member():
 		self.name=name
 		self.age=age 
 class Post():
+	"""" class post takes the title and the conetnt of the post """"
 	def __init__(self,title,content):
 		self.title=title
 		self.content=content
