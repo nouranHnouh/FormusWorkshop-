@@ -8,7 +8,6 @@ class Member():
 		self.member_post=[]
 		
 class Post():
-	"""" class post takes the title and the conetnt of the post """"
 	def __init__(self,title,content):
 		self.title=title
 		self.content=content
