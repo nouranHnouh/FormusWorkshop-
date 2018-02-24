@@ -23,21 +23,19 @@ class Memberstore():
 	def get_by_id(self,id):
 		all_members=self.get_all()
 		result=0
-		for m in all_members:
-			if m.id==id:
-				result=m
+		for member in all_members:
+			if member.id==id:
+				result=member 
 				break 
 		return result 
 
 	"""method check if member exist in the list"""
 	def entity_exist(self,member):
-		result=True 
-		all_members=self.get_all()
-		if member in all_members:
-			result=True 
-		else:
-			result=False
-		return result 
+		result = False
+		if self.get_by_id(member.id) is None:
+			result = True
+		return result
+
 
 	def delete(self,id):
 		all_members=self.get_all()

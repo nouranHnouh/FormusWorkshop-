@@ -22,23 +22,21 @@ def add_members(members,store_members):
 	return store_members
 
 """get_members get all members in the list"""
-def get_members(mylist):
-	print (mylist.get_all()) 
+def get_members(memeber_store):
+	print (memeber_store.get_all()) 
 
 """get id function takes list and id as input 
 it gets the id in the list"""
-def get_id(member_list,id): 
-	print (member_list.get_by_id(id))
+def get_id(member_store,id): 
+	print (member_store.get_by_id(id))
 """check if entity exist, it takes two input a list and a string member
 check if entity exist in a list"""
-def check_entity(mylist,members):
-        print mylist.entity_exist(members)
+def check_entity(member_store,member):
+        print (member_store.entity_exist(member))
 
-def delete (all_member,member):
-	if all_member.entity_exist(member)==True:
-		all_member.delete(member.id) 
-	else:
-		print (all_member.entity_exist(member))
+def delete (all_member,id):
+	all_member.delete(id) 
+	
 
 
 	
@@ -46,18 +44,18 @@ def delete (all_member,member):
 member_instances=create_members()
 
 #testing 
-member1=member_instances
-member2=member_instances
-member3=member_instances
+#member1 = models.Member("Hamed", 22)
+member1,member2,member3=member_instances
 members_store=store.Memberstore()
 add_members(member_instances,members_store)
 get_members(members_store) 
-get_id(members_store,3)
+get_id(members_store,1)
 get_id(members_store,2)
-check_entity(members_store,member2)
 check_entity(members_store,member1)
-delete(members_store,member1)
-get_members(members_store)
+delete(members_store,2)
+
+check_entity(members_store,member2)
+get_members(members_store) 
 
 
 post1=models.Post("python list", "python list offers a way to structure data")
