@@ -6,6 +6,7 @@ class Member():
 		self.name=name
 		self.age=age 
 		self.member_post=[]
+		#self.id=0 
 		
 class Post():
 	def __init__(self,title,content):
