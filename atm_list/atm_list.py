@@ -6,30 +6,37 @@ class Atm():
 		self.balance=balance
 		self.nameBank=name_of_bank
 		self.withdrawals_list=[]
-	#withdraw method takes the request of money, print how much mony the atm will give you
-	#return the current balance after withdraw 
+	
+	#withdraw method takes the request of money
+	#and calculate the current balance after withdraw 
 	def withdraw(self,request):
 		#check if request of mony is less than balnace print an error message 
 		if request>self.balance:
 			print "can`t give you all this money"	
 		else:
 			self.balance-=request
+			#append the list with the request each time 
 			self.withdrawals_list.append(request)
-			while request > 0:
-				if request >= 100:
-					request -= 100
-					print 'give 100'
-				elif request >= 50:
-					request -= 50
-					print 'give 50'
-				elif request >= 10:
-					request -= 10
-					print 'give 10'
-				elif request >= 5:
-					request -= 5
-					print 'give 5'
-				elif request < 5:
-					print 'given'+ str(request)
+			self.transaction(request)
+	
+	#procees request take a request as input and 
+	#print your withdrwal 
+	def process_request(self,request):
+		while request > 0:
+			if request >= 100:
+				request -= 100
+				print 'give 100'
+			elif request >= 50:
+				request -= 50
+				print 'give 50'
+			elif request >= 10:
+				request -= 10
+				print 'give 10'
+			elif request >= 5:
+				request -= 5
+				print 'give 5'
+			elif request < 5:
+				print 'given'+ str(request)
                	
 		print "--------------------------------------"
 		#return self.balance-request

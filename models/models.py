@@ -6,16 +6,21 @@ class Member():
 		self.name=name
 		self.age=age 
 		self.member_post=[]
-		#self.id=0 
+		self.id=0
+	def __str__(self):
+		return 'Name:{}\nAge: {}'.format(self.name,self.age)
+	def __repr__(self):
+		return "<name:%s age %s>"%(self.name,self.age)
 		
 class Post():
 	def __init__(self,title,content):
 		self.title=title
 		self.content=content
-		
+	def __str__(self):
+		return 'Title: {} \nContent: {}'.format(self.title, self.content)
+	def __repr__(self):
+		return "<title:%s content %s>"%(self.title,self.content)	
 
 
 		
-
-
 

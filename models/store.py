@@ -2,7 +2,11 @@ class Memberstore():
 	#store members
 	members=[]
 	las_id=1
-	
+	def __str__(self):
+		return "From str method of Memberstore :members is %s, b is %s" %(Memberstore.members,Memberstore.las_id)
+	def __repr__(self):
+		return "<Memberstore members:%s las_id %s>"%(Memberstore.members,Memberstore.las_id)
+		
 	def add(self,member):
 		#add the members and their id to the list 
 		member.id=Memberstore.las_id
@@ -12,6 +16,7 @@ class Memberstore():
 
 	def get_all(self):
 		#get all the members
+		#print (Memberstore.members)
 		return Memberstore.members
 
 	"""method that return member id """
@@ -37,8 +42,7 @@ class Memberstore():
 	def delete(self,id):
 		all_members=self.get_all()
 		id_member=self.get_by_id(id)
-		if id in id_member:
-			all_members.remove(id_member)
+		all_members.remove(id_member)
 
 			
 
