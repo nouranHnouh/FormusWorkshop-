@@ -52,10 +52,18 @@ get_members(members_store)
 get_id(members_store,1)
 get_id(members_store,2)
 check_entity(members_store,member1)
+<<<<<<< HEAD
 delete(members_store,2)
 
 check_entity(members_store,member2)
 get_members(members_store) 
+||||||| update
+delete(members_store,member1)
+get_members(members_store)
+=======
+delete(members_store,1)
+get_members(members_store)
+>>>>>>> master
 
 
 post1=models.Post("python list", "python list offers a way to structure data")
