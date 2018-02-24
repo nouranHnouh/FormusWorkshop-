@@ -34,11 +34,9 @@ check if entity exist in a list"""
 def check_entity(mylist,members):
         print mylist.entity_exist(members)
 
-def delete (all_member,member):
-	if all_member.entity_exist(member)==True:
-		all_member.delete(member.id) 
-	else:
-		print (all_member.entity_exist(member))
+def delete (all_member,id):
+	all_member.delete(id) 
+	
 
 
 	
@@ -56,7 +54,7 @@ get_id(members_store,3)
 get_id(members_store,2)
 check_entity(members_store,member2)
 check_entity(members_store,member1)
-delete(members_store,member1)
+delete(members_store,1)
 get_members(members_store)
 
 
