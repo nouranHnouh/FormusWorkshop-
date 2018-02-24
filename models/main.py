@@ -1,16 +1,33 @@
 import models
 import store
 
-member1=models.Member("Karen",19)
-member2=models.Member("Jhon",23)
-member3 = models.Member('Nour', 28)
+"""function create members takes three members as input 
+and create them using Member class."""
+
+def create_members():
+	member1=models.Member("Karen",19)
+	member2=models.Member("Jhon",23)
+	member3 =models.Member('Nour', 28)
+	return member1,member2,member3
+
+"""add_members takes two list and use for loop to add members
+one by one"""
+def add_members(members,store_members):
+	for m in members:
+		store_members.add(m) 
+	return store_members
+
+"""get_members get all members in the list"""
+def get_members():
+	get_member=store.Memberstore()
+	print (get_member.get_all()) 
 
 
-member_store = store.Memberstore()
-member_store.add(member1)
-member_store.add(member2)
-member_store.add(member3)
-print (member_store.get_all())
+"""create instances and call functions"""
+member_instances=create_members()
+members_store=store.Memberstore()
+add_members(member_instances,members_store)
+get_members() 
 
 
 post1=models.Post("python list", "python list offers a way to structure data")
