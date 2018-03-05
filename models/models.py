@@ -5,6 +5,7 @@ class Member():
 	def __init__(self,name,age):
 		self.name=name
 		self.age=age 
+		#list of the post 
 		self.member_post=[]
 		self.id=0
 	def __str__(self):
@@ -13,9 +14,12 @@ class Member():
 		return "<name:%s age %s>"%(self.name,self.age)
 		
 class Post():
-	def __init__(self,title,content):
+	def __init__(self,title,content,member_id):
 		self.title=title
 		self.content=content
+		self.member_id=member_id
+		self.id=0
+
 	def __str__(self):
 		return 'Title: {} \nContent: {}'.format(self.title, self.content)
 	def __repr__(self):
