@@ -6,7 +6,7 @@ class Member():
 		self.name=name
 		self.age=age 
 		#list of the post 
-		self.member_post=[]
+		self.posts=[]
 		self.id=0
 	def __str__(self):
 		return 'Name:{}\nAge: {}'.format(self.name,self.age)

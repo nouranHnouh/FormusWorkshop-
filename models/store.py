@@ -1,7 +1,9 @@
+import itertools
+
 class Memberstore():
 	#store members
 	members=[]
-	las_id=1
+	last_id=1
 	def __str__(self):
 		return "From str method of Memberstore :members is %s, b is %s" %(Memberstore.members,Memberstore.las_id)
 	def __repr__(self):
@@ -9,9 +11,9 @@ class Memberstore():
 		
 	def add(self,member):
 		#add the members and their id to the list 
-		member.id=Memberstore.las_id
+		member.id=Memberstore.last_id
 		Memberstore.members.append(member)
-		Memberstore.las_id+=1 
+		Memberstore.last_id+=1 
 	
 
 	def get_all(self):
@@ -31,19 +33,19 @@ class Memberstore():
 	"""get member by name,and return it """
 	def get_by_name(self,name):
 		all_members=self.get_all()
-		result=[]
-		for member in all_members:
+		for member in all_members: 
 			if member.name==name:
-				result.append(member)
-		return result 
+				yield member 
     #update post data
 	def update(self,member):
-		member_id=member.id 
-		for m in Memberstore.members:
-			if m.id==member_id: 
-				m.name=member.name
-				m.age=member.age
-				print "your profil has been updated "
+		result=member
+		all_members=self.get_all()
+		for m,current_member in enumerate(all_members):
+			if member.id==current_member.id: 
+				all_members[m]=member 
+				break
+		return result 
+
 
 	"""method check if member exist in the list"""
 	def entity_exist(self,member):
@@ -52,12 +54,29 @@ class Memberstore():
 			result = False
 		return result
 
-
+    #delete member 
 	def delete(self,id):
 		all_members=self.get_all()
 		id_member=self.get_by_id(id)
 		all_members.remove(id_member)
-
+    
+    #get_members_with_post method returns the member with their corresponding post
+	def get_members_with_posts(self,all_posts):
+		all_members=self.get_all()
+		for member,post in itertools.product(all_members,all_posts):
+			if member.id==post.member_id:
+				member.posts.append(post)
+		for member in all_members:
+			yield member 
+	
+	#get top 2 people who wrote more posts 
+	def get_top_two(self,posts):
+		#create list
+		storted_members=list(self.get_members_with_posts(posts))
+		#sort list, from members with most written posts
+		storted_members.sort(key=lambda member:member.posts,reverse=True)
+		yield storted_members[0]
+		yield storted_members[1]
 
 class Poststore():
 	"""class poststore has store the members posts in posts list"""
@@ -92,12 +111,17 @@ class Poststore():
 		all_post.remove(post_id) 
 	#update post data
 	def update(self,post):
-		post_id=post.id 
-		for p in Poststore.posts:
-			if p.id==post_id:
-				p.title=post.title
-				p.content=post.content
-				print "you have updated your post"
+		all_post=self.get_all()
+		result=post 
+		for p,current_post in enumerate(all_post):
+			if post.id==current_post.id:
+				all_post[p]=post
+				break
+		return result
+
+   
+
+
 
 
 
