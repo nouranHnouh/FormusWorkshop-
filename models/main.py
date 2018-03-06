@@ -8,9 +8,9 @@ def create_members():
 	member1=models.Member("Karen",19)
 	member2=models.Member("Jhon",23)
 	member3 =models.Member('Nour', 28)
-	#print(member1)
-	#print(member2)
-	#print(member3) 
+	print(member1)
+	print(member2)
+	print(member3) 
 	return member1,member2,member3
 
 """add_members takes two list and use for loop to add members
@@ -77,16 +77,15 @@ member_instances=create_members()
 member1,member2,member3=member_instances
 members_store=store.Memberstore()
 add_members(member_instances,members_store)
-#add_members(member4,members_store)
 print_all(members_store) 
 get_id(members_store,1)
 get_id(members_store,2)
-#check_entity(members_store,member1)
-#print_all(members_store) 
+check_entity(members_store,member1)
+print_all(members_store) 
 
-#delete(members_store,1)
-#check_entity(members_store,member1)
-#print_all(members_store)
+delete(members_store,1)
+check_entity(members_store,member1)
+print_all(members_store)
 
 get_member_name("Jhon")
 update_member(member3)
@@ -151,9 +150,9 @@ post_instances=create_post(member_instances)
 post1,post2,post3,post4,post5=post_instances
 post_store=store.Poststore() 
 add_posts(post_instances,post_store) 
-#print_all(post_store) 
-#update_post(post2)
-#print_all(post_store) 
+print_all(post_store) 
+update_post(post2)
+print_all(post_store) 
 get_member_post(members_store,post_store)
 top_two(members_store,post_store)
 
