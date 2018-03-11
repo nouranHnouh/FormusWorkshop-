@@ -25,7 +25,7 @@ class Post():
 	content of the post 
 	member_id:to get the post by id of member
 	and an id of the post"""
-	def __init__(self,title,content,member_id):
+	def __init__(self,title,content,member_id=0):
 
 		self.title=title
 		self.content=content
