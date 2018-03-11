@@ -1,0 +1,20 @@
+
+body{
+	background-color:lightblue;
+}
+h1 {
+	color:black;
+	text-align:center;
+	font-size: 60px;
+}
+div{
+    color:blue;
+    text-align:center;
+}
+table{
+	width: 100%;
+}
+th{
+	text-align:left;
+}
+

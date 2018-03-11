@@ -34,7 +34,7 @@ class Atm():
 					
 		print "--------------------------------------"
 		return self.balance
-		
+#define balance		
 balance1=500
 balance2=1000
 #instnaces of class atm
@@ -47,16 +47,12 @@ atm1.withdraw(200)
 atm2=Atm(balance2," TD Bank")
 print ("Welecom to "+ atm2.nameBank)
 print ("current blanace "+str(atm2.balance))
-<<<<<<< Updated upstream:atm_class/atm_class.py
-atm2.withdraw(500)
-atm2.withdraw(500)
-atm2.withdraw(90)
-||||||| ancestor
-atm2.withdraw(300)
-atm2.withdraw(400)
 
-=======
 atm2.withdraw(500)
 atm2.withdraw(500)
-atm2.withdraw(90)
->>>>>>> Stashed changes:atm_class/atm.py
+
+
+
+
+
+
